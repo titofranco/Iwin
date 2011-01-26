@@ -1,0 +1,32 @@
+<h1>Editing client</h1>
+
+<% form_for(@client) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :identificacion %><br />
+    <%= f.text_field :identificacion %>
+  </p>
+  <p>
+    <%= f.label :nombre_completo %><br />
+    <%= f.text_field :nombre_completo %>
+  </p>
+  <p>
+    <%= f.label :edad %><br />
+    <%= f.text_field :edad %>
+  </p>
+  <p>
+    <%= f.label :ciudad %><br />
+    <%= f.text_field :ciudad %>
+  </p>
+  <p>
+    <%= f.label :sexo %><br />
+    <%= f.text_field :sexo %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @client %> |
+<%= link_to 'Back', clients_path %>

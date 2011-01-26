@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  identificacion: MyString
+  nombre_completo: MyString
+  edad: 1
+  ciudad: MyString
+  sexo: MyString
+
+two:
+  identificacion: MyString
+  nombre_completo: MyString
+  edad: 1
+  ciudad: MyString
+  sexo: MyString

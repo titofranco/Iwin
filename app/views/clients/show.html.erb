@@ -1,0 +1,28 @@
+<p>
+  <b>Identificacion:</b>
+  <%=h @client.identificacion %>
+</p>
+
+<p>
+  <b>Nombre completo:</b>
+  <%=h @client.nombre_completo %>
+</p>
+
+<p>
+  <b>Edad:</b>
+  <%=h @client.edad %>
+</p>
+
+<p>
+  <b>Ciudad:</b>
+  <%=h @client.ciudad %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%=h @client.sexo %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>
