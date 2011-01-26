@@ -17,11 +17,11 @@
   </p>
   <p>
     <%= f.label :ciudad %><br />
-    <%= f.text_field :ciudad %>
+    <%= f.select (:ciudad, %w{Bogotá Medellín Cali Cartagena }) %>
   </p>
   <p>
     <%= f.label :sexo %><br />
-    <%= f.text_field :sexo %>
+    <%= f.select(:sexo, %w{ Masculino Femenino}) %>
   </p>
   <p>
     <%= f.submit 'Create' %>
