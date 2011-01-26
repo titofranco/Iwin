@@ -58,9 +58,9 @@ class ClientsController < ApplicationController
   # PUT /clients/1.xml
   def update
     @client = Client.find(params[:id])
-
     respond_to do |format|
       if @client.update_attributes(params[:client])
+       
         flash[:notice] = 'Client was successfully updated.'
         format.html { redirect_to(@client) }
         format.xml  { head :ok }
@@ -82,4 +82,27 @@ class ClientsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def search
+    if request.post?
+      @errors = []
+      type = params[:type]
+      value = params[:value]
+      
+      if value.blank?
+        @errors << "No debe ir en blanco"
+      end 
+      
+      if @errors.empty?
+        begin 
+          @client = Client.all(:conditions => {type.to_sym => value.to_s })
+        rescue Exception => err
+          @errors = err.message  
+        end
+      end  
+        return [@client, @errors]
+    end
+  end
+
+  
 end
