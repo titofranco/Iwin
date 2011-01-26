@@ -1,0 +1,44 @@
+<% unless @errors.blank? %> 
+  <strong> <%=@errors%> </strong>
+<%end%>
+
+<h1>Search of clients</h1>
+
+<% form_tag :action => 'search' do %>
+   Search by <%= select_tag (:type, options_for_select(%w{identificacion nombre_completo edad ciudad sexo}, params[:type])) %> 
+   <%= text_field_tag :value, params[:value] %>
+   <%= submit_tag 'Buscar' %>
+<% end %>
+
+
+<%unless @client.nil?%>
+  <%@client.each do |c|%>
+
+    <p>
+    <b>Identificacion:</b>
+    <%=h c.identificacion %> 
+  </p>
+
+  <p>
+    <b>Nombre completo:</b>
+    <%=h c.nombre_completo %>
+  </p>
+
+  <p>
+    <b>Edad:</b>
+    <%=h c.edad %>
+  </p>
+ 
+  <p>
+    <b>Ciudad:</b>
+    <%=h c.ciudad %>
+  </p> 
+
+  <p>
+    <b>Sexo:</b> 
+    <%=h c.sexo %>
+  </p>
+  <br>
+  </p>
+  <%end%>
+<%end%>
